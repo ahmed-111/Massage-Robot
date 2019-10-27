@@ -14,7 +14,7 @@ const SCOPES = ['https://www.googleapis.com/auth/calendar'];
 // time.
 const TOKEN_PATH = 'token.json';
 
-var startDate, endDate;
+var startDate = new Date(), endDate = new Date();
 
 var requestType = '', requestMethod = '';
 
@@ -239,7 +239,7 @@ function slotsFromEvents(events) {
 					tempEndDate = new Date(Date.UTC(startDate.getFullYear(), startDate.getMonth(), startDate.getUTCDate(), 18, 0));
 				}
 				freeSlots.push({startDate: tempStartDate.toISOString(), endDate: tempEndDate.toISOString()});
-			}		
+			}	
      });
 	
 	return grandFinale(freeSlots);
